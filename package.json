@@ -1,20 +1,42 @@
 {
+  "type": "module",
   "name": "friends",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --open",
+    "deploy": "npm run build && gh-pages -d dist -m $1",
+    "dev_original": "vite --host --port 3000 --force",
+    "dev": "node server.js",
     "build": "tsc && vite build",
-    "preview": "tsc && vite build && vite preview --host --open"
+    "preview": "vite preview --host"
   },
   "typeRoots": [
     "node_modules/@types",
     "src/@types"
   ],
-  "devDependencies": {
-    "typescript": "^4.6.2",
-    "vite": "^2.8.6"
-  },
   "dependencies": {
-    "babylonjs": "^4.2.2"
+    "@babylonjs/core": "5.43.1",
+    "@babylonjs/gui": "5.43.1",
+    "@babylonjs/loaders": "5.43.1",
+    "@babylonjs/materials": "5.43.1",
+    "@reduxjs/toolkit": "1.8.2",
+    "earcut": "2.2.3",
+    "react": "18.1.0",
+    "react-babylonjs": "3.1.15",
+    "react-dom": "18.1.0",
+    "react-redux": "8.0.2",
+    "redux": "4.2.0",
+    "xmachina": "0.0.8"
+  },
+  "devDependencies": {
+    "@babylonjs/gui-editor": "5.43.1",
+    "@babylonjs/inspector": "5.43.1",
+    "@babylonjs/serializers": "5.43.1",
+    "@types/earcut": "2.1.1",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "express": "4.18.2",
+    "gh-pages": "4.0.0",
+    "typescript": "4.6.2",
+    "vite": "4.0.4"
   }
 }
